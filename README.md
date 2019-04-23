@@ -13,8 +13,11 @@ Simple and convenient API
 Sample code:
 
 io.on('connection', socket => {
+
   socket.emit('request', /*  */); // emit an event to the socket
-  io.emit('broadcast', /*  */); // emit an event to all connected sockets  
+
+  io.emit('broadcast', /*  */); // emit an event to all connected sockets 
+   
   socket.on('reply', () => { /*  */ }); // listen to the event
 });
 
@@ -28,8 +31,11 @@ npm install
 (or)
 
 npm install express
+
 npm install body-parser
+
 npm install socket.io
+
 npm install morgan
 
 

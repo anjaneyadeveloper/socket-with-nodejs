@@ -1,0 +1,32 @@
+{
+  "name": "socket-with-nodejs",
+  "version": "1.0.0",
+  "description": "socket io with node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anjaneyadeveloper/socket-with-nodejs.git"
+  },
+  "keywords": [
+    "socket",
+    "io",
+    "with",
+    "node",
+    "js"
+  ],
+  "author": "anjaneya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anjaneyadeveloper/socket-with-nodejs/issues"
+  },
+  "homepage": "https://github.com/anjaneyadeveloper/socket-with-nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "socket.io": "^2.2.0"
+  }
+}

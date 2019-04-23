@@ -31,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //       authorController.checkValidUser(req, res, next);
 // };
 //app.use(vaildHeader);
+
 io.on("connection", function(socket) {
     console.log("Client connected...");
     socket.on("send message", function(sent_msg, callback) {
@@ -49,9 +50,22 @@ io.on("connection", function(socket) {
     //all the other users over the network
   });
 });
+const rateLimit = require("express-rate-limit");
+ 
+app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
+ 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+ 
+//  apply to all requests
+app.use(limiter);
 //app.use('/', indexRouter);
 //app.use("/chat", usersRouter);
-
+app.get('/',  function (req, res) {
+  res.send('hello world')
+})
 //app.listen(port);
 console.log("The magic happens on port " + port);
 // catch 404 and forward to error handler
@@ -60,9 +74,19 @@ console.log("The magic happens on port " + port);
 // });
 
 // error handler
+// production error handler
+// no stacktraces leaked to user
+// app.use(function(err, req, res, next) {
+//   res.status(err.status || 500);
+//   res.render('error', {
+//       message: err.message,
+//       error: {}
+//   });
+// });
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
+  console.log(req.app.get("env"));
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page

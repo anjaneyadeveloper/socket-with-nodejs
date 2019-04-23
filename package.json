@@ -28,8 +28,10 @@
   "homepage": "https://github.com/anjaneyadeveloper/socket-with-nodejs#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
+    "express-rate-limit": "^3.4.1",
     "morgan": "^1.9.1",
     "socket.io": "^2.2.0"
   }

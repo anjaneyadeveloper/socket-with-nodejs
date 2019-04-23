@@ -32,8 +32,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // };
 //app.use(vaildHeader);
 io.on("connection", function(socket) {
-  console.log("Client connected...");
-  socket.on("send message", function(sent_msg, callback) {
+    console.log("Client connected...");
+    socket.on("send message", function(sent_msg, callback) {
     console.log("message: " + JSON.stringify(sent_msg));
     // var results = sql.query("SELECT * from apiyh_keys where ak_api_key = ?",[headerData.accesskey],function(error, results, fields) {
 

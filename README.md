@@ -17,7 +17,7 @@ io.on('connection', socket => {
   socket.emit('request', /*  */); // emit an event to the socket
 
   io.emit('broadcast', /*  */); // emit an event to all connected sockets 
-   
+
   socket.on('reply', () => { /*  */ }); // listen to the event
 });
 
@@ -42,5 +42,12 @@ npm install morgan
 Running the application
 
 Assuming that node Js is already installed, traverse to the project location and execute the command - node app.js and hit the url (http://localhost:3042) to access the vhat application.
+
+following code connect socket in client side:
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:3042');
+</script>
 
 After that just open socket.html on browser and start to chat with bidirectional
